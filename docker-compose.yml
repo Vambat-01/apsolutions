@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:  
+  web-app:
+    image: "web-app"
+    ports:
+      - "8000:8000"
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    container_name: elastic
+    environment:
+      - discovery.type=single-node
